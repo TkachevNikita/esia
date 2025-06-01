@@ -1,0 +1,55 @@
+@import "../../../../styles";
+
+.e-input {
+  position: relative;
+
+  &__container {
+    position: relative;
+
+    input {
+      z-index: 1;
+      position: relative;
+      border: none;
+      padding: 14px 16px;
+      font-size: 18px;
+      line-height: 18px;
+      border-radius: 8px;
+      background-color: $primary-extra-light;
+      color: $dark;
+      width: 100%;
+      width: -moz-available;
+
+      &:focus {
+        outline: 2px solid #99b1e6;
+      }
+
+      &:focus,
+      &:not(:placeholder-shown) {
+        padding-top: 20px;
+        padding-bottom: 8px;
+      }
+    }
+  }
+
+  &__placeholder {
+    display: inline;
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    color: #999;
+    z-index: 2;
+    pointer-events: none;
+
+    &.active {
+      top: 2px;
+      font-size: 10px;
+      line-height: 18px;
+      color: $gray;
+      z-index: 2;
+
+      & + input {
+        padding: 23px 16px 7px 16px;
+      }
+    }
+  }
+}

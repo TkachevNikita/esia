@@ -1,3 +1,6 @@
-<button class="e-button">
+<button
+  class="e-button"
+  [class.e-button__outlined]="variant === 'outlined'"
+>
   <ng-content/>
 </button>

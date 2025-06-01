@@ -1,0 +1,15 @@
+<div class="e-input">
+  <div class="e-input__container">
+    <input
+      [type]="type"
+      [disabled]="disabled"
+      [value]="value"
+      (input)="onInput($event)"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+    />
+    <label class="e-input__placeholder" [class.active]="isActive || value">
+      {{ placeholder }}
+    </label>
+  </div>
+</div>
