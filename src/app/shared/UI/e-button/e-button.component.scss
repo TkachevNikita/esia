@@ -20,6 +20,11 @@
   justify-content: center;
   gap: 15px;
 
+  &:disabled {
+    background-color: $primary-light;
+    color: $gray;
+  }
+
   &__outlined {
     background-color: $light;
     border: 2px solid $primary;

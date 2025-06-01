@@ -13,9 +13,9 @@ import {CodeInputModule} from "angular-code-input";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginCodeComponent {
-  readonly dialogRef = inject(MatDialogRef<LoginCodeComponent>);
+  private readonly dialogRef = inject(MatDialogRef<LoginCodeComponent>);
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  public completed(): void {
+    this.dialogRef.close("done");
   }
 }
