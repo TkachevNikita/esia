@@ -1,6 +1,6 @@
 <div class="container">
   <div class="login">
-    <div class="login__logo">
+    <div class="login__logo logo">
       <img src="Logo.svg"/>
     </div>
     <div class="login__top">
@@ -10,14 +10,14 @@
     </div>
     <div class="login__bottom">
       <div class="login__bottom--actions">
-        <e-button>
+        <e-button (click)="open()">
           Войти
         </e-button>
       </div>
 
       <span [style.text-align]="'center'">
         Нет аккаунта?
-        <a href="" class="hint" >
+        <a href="" class="hint">
           Зарегистрироваться
         </a>
       </span>

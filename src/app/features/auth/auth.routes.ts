@@ -13,6 +13,11 @@ export const authRoutes: Route[] = [
             (m) => m.LoginComponent,
           ),
       },
+      {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+      },
     ],
   },
 ];

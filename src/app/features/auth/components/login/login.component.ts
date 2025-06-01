@@ -1,6 +1,9 @@
-import {ChangeDetectionStrategy, Component} from "@angular/core";
+import {ChangeDetectionStrategy, Component, inject} from "@angular/core";
 import {EButtonComponent} from "../../../../shared/UI/e-button/e-button.component";
 import {EInputComponent} from "../../../../shared/UI/e-input/e-input.component";
+import {LoginCodeComponent} from "../login-code/login-code.component";
+import {MatDialog} from "@angular/material/dialog";
+import {LoginVariantsComponent} from "../login-variants/login-variants.component";
 
 @Component({
   standalone: true,
@@ -13,4 +16,10 @@ import {EInputComponent} from "../../../../shared/UI/e-input/e-input.component";
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent {}
+export class LoginComponent {
+  readonly dialog = inject(MatDialog);
+
+  open(): void {
+    this.dialog.open(LoginVariantsComponent)
+  }
+}
