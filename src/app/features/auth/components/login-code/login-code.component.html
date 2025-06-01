@@ -1,0 +1,27 @@
+<mat-dialog-content>
+  <div class="container">
+    <div class="logo">
+      <img src="Logo.svg">
+    </div>
+    <h2 class="login-code__title">
+      Подтвердите вход
+    </h2>
+    <p class="login-code__text">
+      Код подтверждения отправлен на номер <br>
+      +7 992 312 7905
+    </p>
+    <div class="login-code__input">
+      <span class="login-code__input--title">
+        Код подтверждения
+      </span>
+      <code-input
+        [isCodeHidden]="false"
+        [codeLength]="5"
+        (codeCompleted)="completed()"
+      />
+    </div>
+    <a href="" class="hint">
+      Не приходит код
+    </a>
+  </div>
+</mat-dialog-content>
