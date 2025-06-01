@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+$primary: #0D4CD3;
+$light: #ffffff;
+$gray: #66727F;
+$primary-light: #E4ECFD;
+$primary-extra-light: #F5F7FA;
+$dark: #0b1f33;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  background-color: $primary-light;
+}
+
