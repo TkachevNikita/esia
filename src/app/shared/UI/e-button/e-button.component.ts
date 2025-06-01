@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from "@angular/core";
+import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
 
 @Component({
   standalone: true,
@@ -7,4 +7,7 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
   styleUrl: './e-button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EButtonComponent {}
+export class EButtonComponent {
+  @Input()
+  public variant: 'filled' | 'outlined' = 'filled';
+}

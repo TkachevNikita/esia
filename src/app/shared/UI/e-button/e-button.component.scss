@@ -1,7 +1,7 @@
 @import "../../../../styles";
 
 :host {
-  width: inherit;
+  width: 100%;
 }
 
 .e-button {
@@ -13,5 +13,11 @@
   font-size: 16px;
   font-weight: 400;
   border-radius: 8px;
-  width: inherit;
+  width: 100%;
+
+  &__outlined {
+    background-color: $light;
+    border: 2px solid $primary;
+    color: $primary;
+  }
 }
