@@ -3,11 +3,11 @@ import {CodeInputModule} from "angular-code-input";
 import {MatDialog, MatDialogContent, MatDialogRef} from "@angular/material/dialog";
 import {MatIcon} from "@angular/material/icon";
 import {EButtonComponent} from "../../../../shared/UI/e-button/e-button.component";
-import {MatIconButton} from "@angular/material/button";
-import {MatTooltip} from "@angular/material/tooltip";
 import {LoginCallComponent} from "../login-call/login-call.component";
 import {LoginCodeComponent} from "../login-code/login-code.component";
 import {LoginPersonComponent} from "../login-person/login-person.component";
+import {LoginKeyComponent} from "../login-key/login-key.component";
+import {LoginPhysicComponent} from "../login-physic/login-physic.component";
 
 @Component({
   standalone: true,
@@ -19,8 +19,6 @@ import {LoginPersonComponent} from "../login-person/login-person.component";
     MatDialogContent,
     MatIcon,
     EButtonComponent,
-    MatIconButton,
-    MatTooltip,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -28,18 +26,29 @@ export class LoginVariantsComponent {
   private readonly dialog = inject(MatDialog);
   private readonly dialogRef = inject(MatDialogRef<LoginCodeComponent>);
 
-  public selectVariant(variant: 'qr' | 'call' | 'nfc' | 'person'): void {
+  public selectVariant(variant: 'qr' | 'call' | 'nfc' | 'person' | 'code'): void {
     switch (variant) {
       case "call":
         this.dialogRef.close();
         this.dialog.open(LoginCallComponent, {
           width: '600px',
-          height: '550px'
         });
         break;
       case "person":
         this.dialogRef.close();
-        this.dialog.open(LoginPersonComponent)
+        this.dialog.open(LoginPersonComponent);
+        break;
+      case 'code':
+        this.dialogRef.close();
+        this.dialog.open(LoginKeyComponent, {
+          width: '600px'
+        });
+        break;
+      case 'nfc':
+        this.dialogRef.close();
+        this.dialog.open(LoginPhysicComponent, {
+          width: '600px'
+        });
         break;
     }
   }

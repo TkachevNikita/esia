@@ -1,6 +1,8 @@
 import {ChangeDetectionStrategy, Component, inject} from "@angular/core";
 import {MatDialogContainer, MatDialogContent, MatDialogRef, MatDialogTitle} from "@angular/material/dialog";
 import {CodeInputModule} from "angular-code-input";
+import {MatIconButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   standalone: true,
@@ -8,7 +10,7 @@ import {CodeInputModule} from "angular-code-input";
   styleUrl: './login-code.component.scss',
   imports: [
     MatDialogContent,
-    CodeInputModule
+    CodeInputModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
