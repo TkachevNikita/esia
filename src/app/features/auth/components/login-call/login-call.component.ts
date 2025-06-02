@@ -1,12 +1,15 @@
 import {AfterViewInit, ChangeDetectionStrategy, Component, DestroyRef, inject} from "@angular/core";
 import {EButtonComponent} from "../../../../shared/UI/e-button/e-button.component";
-import {MatDialogContent} from "@angular/material/dialog";
+import {MatDialog, MatDialogContent, MatDialogRef} from "@angular/material/dialog";
 import {BehaviorSubject, debounceTime, EMPTY, switchMap, timer} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {AsyncPipe} from "@angular/common";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatIcon} from "@angular/material/icon";
+import {MatIconButton} from "@angular/material/button";
+import {LoginVariantsComponent} from "../login-variants/login-variants.component";
 
 @Component({
   standalone: true,
@@ -18,10 +21,14 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     MatDialogContent,
     MatProgressSpinner,
     AsyncPipe,
+    MatIcon,
+    MatIconButton,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginCallComponent implements AfterViewInit {
+  private readonly dialogRef = inject(MatDialogRef<LoginCallComponent>);
+  private readonly dialog = inject(MatDialog);
   private readonly destroyRef = inject(DestroyRef);
   private readonly snackBar = inject(MatSnackBar);
   private readonly router = inject(Router);
@@ -53,5 +60,12 @@ export class LoginCallComponent implements AfterViewInit {
           location.href = 'https://gosuslugi.ru';
         }
       })
+  }
+
+  public goBack(): void {
+    this.dialogRef.close();
+    this.dialog.open(LoginVariantsComponent, {
+      width: '600px',
+    });
   }
 }

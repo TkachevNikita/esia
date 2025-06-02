@@ -47,3 +47,7 @@ code-input input {
 .mdc-snackbar__surface {
   background-color: #4ee354 !important;
 }
+
+.mat-mdc-dialog-content {
+  max-height: 100% !important;
+}

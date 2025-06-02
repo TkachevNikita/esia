@@ -3,8 +3,6 @@ import {CodeInputModule} from "angular-code-input";
 import {MatDialog, MatDialogContent, MatDialogRef} from "@angular/material/dialog";
 import {MatIcon} from "@angular/material/icon";
 import {EButtonComponent} from "../../../../shared/UI/e-button/e-button.component";
-import {MatIconButton} from "@angular/material/button";
-import {MatTooltip} from "@angular/material/tooltip";
 import {LoginCallComponent} from "../login-call/login-call.component";
 import {LoginCodeComponent} from "../login-code/login-code.component";
 import {LoginPersonComponent} from "../login-person/login-person.component";
@@ -19,8 +17,6 @@ import {LoginPersonComponent} from "../login-person/login-person.component";
     MatDialogContent,
     MatIcon,
     EButtonComponent,
-    MatIconButton,
-    MatTooltip,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -34,12 +30,11 @@ export class LoginVariantsComponent {
         this.dialogRef.close();
         this.dialog.open(LoginCallComponent, {
           width: '600px',
-          height: '550px'
         });
         break;
       case "person":
         this.dialogRef.close();
-        this.dialog.open(LoginPersonComponent)
+        this.dialog.open(LoginPersonComponent);
         break;
     }
   }
