@@ -8,25 +8,36 @@
     </h2>
     <div class="login-variants__actions">
       <div class="login-variants__list">
-        <e-button variant="outlined" (click)="selectVariant('call')">
+        <e-button (click)="selectVariant('call')">
+          <mat-icon class="login-variants__item--icon">
+            person
+          </mat-icon>
+          Доверенное лицо
+        </e-button>
+        <e-button (click)="selectVariant('call')">
           <mat-icon class="login-variants__item--icon">
             call
           </mat-icon>
-          Обратный звонок
+          Звонок
         </e-button>
-        <e-button variant="outlined">
+        <e-button>
           <mat-icon class="login-variants__item--icon">
             qr_code
           </mat-icon>
           QR-code
         </e-button>
+      </div>
+      <h3 style="margin-top: 30px; margin-bottom: 10px;">
+        Другие способы входа
+      </h3>
+      <div class="login-variants__list">
         <e-button
           variant="negative"
         >
           <mat-icon class="login-variants__item--icon">
             nfc
           </mat-icon>
-          Вход по NFC-метке
+          NFC-метка
         </e-button>
         <e-button
           variant="negative"
@@ -34,7 +45,15 @@
           <mat-icon class="login-variants__item--icon">
             vpn_key
           </mat-icon>
-          Вход по коду
+          Личный код
+        </e-button>
+        <e-button
+          variant="negative"
+        >
+          <mat-icon class="login-variants__item--icon">
+            signature
+          </mat-icon>
+          Эл. подпись
         </e-button>
       </div>
     </div>

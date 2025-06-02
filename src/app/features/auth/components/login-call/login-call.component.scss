@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  height: 100%;
 
   &__title {
     font-weight: 500;
@@ -32,4 +33,12 @@
   .login-call__img {
     display: none;
   }
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }

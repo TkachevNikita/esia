@@ -6,20 +6,26 @@
     <h2 class="login-call__title">
       Подтверждение входа
     </h2>
-    <p class="login-call__text">
-      Для продолжения совершите бесплатный звонок по номеру <strong>100</strong>
-      и произнесите фразу:
-    </p>
-    <p class="login-call__word">
-      <strong>&laquo;Пошел нахуй&raquo;</strong>
-    </p>
-    <img
-      class="login-call__img"
-      [style.width]="'150px'"
-      src="https://clipart-library.com/8300/2368/speaking-head-emoji-clipart-md.png"
-    >
-    <e-button>
-      Позвонить
-    </e-button>
+    @if (!(showLoader$ | async)) {
+      <p class="login-call__text">
+        Для продолжения совершите бесплатный звонок по номеру <strong>100</strong>
+        и произнесите фразу:
+      </p>
+      <p class="login-call__word">
+        <strong>&laquo;Хакатон&raquo;</strong>
+      </p>
+      <img
+        class="login-call__img"
+        [style.width]="'150px'"
+        src="https://clipart-library.com/8300/2368/speaking-head-emoji-clipart-md.png"
+      >
+      <e-button>
+        Позвонить
+      </e-button>
+    } @else {
+      <div class="content">
+        <mat-spinner></mat-spinner>
+      </div>
+    }
   </div>
 </mat-dialog-content>

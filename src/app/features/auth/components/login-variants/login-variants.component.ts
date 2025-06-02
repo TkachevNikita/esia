@@ -31,7 +31,10 @@ export class LoginVariantsComponent {
     switch (variant) {
       case "call":
         this.dialogRef.close();
-        const dialogRef = this.dialog.open(LoginCallComponent);
+        const dialogRef = this.dialog.open(LoginCallComponent, {
+          width: '600px',
+          height: '550px'
+        });
     }
   }
 }
