@@ -9,7 +9,7 @@ import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
 })
 export class EButtonComponent {
   @Input()
-  public variant: 'filled' | 'outlined' = 'filled';
+  public variant: 'filled' | 'outlined' | 'negative' = 'filled';
 
   @Input()
   public disabled = false;

@@ -30,4 +30,10 @@
     border: 2px solid $primary;
     color: $primary;
   }
+
+  &__negative {
+    background-color: $light;
+    border: 2px solid $gray;
+    color: $gray;
+  }
 }
