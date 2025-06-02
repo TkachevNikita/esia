@@ -20,24 +20,22 @@
           </mat-icon>
           QR-code
         </e-button>
-      </div>
-    </div>
-    <div class="login-variants__actions">
-      <div
-        class="login-variants__list"
-        [style.flex-direction]="'row'"
-        [style.justify-content]="'center'"
-      >
-        <button mat-icon-button matTooltip="NFC-метка">
+        <e-button
+          variant="negative"
+        >
           <mat-icon class="login-variants__item--icon">
             nfc
           </mat-icon>
-        </button>
-        <button mat-icon-button matTooltip="Вход по коду">
+          Вход по NFC-метке
+        </e-button>
+        <e-button
+          variant="negative"
+        >
           <mat-icon class="login-variants__item--icon">
             vpn_key
           </mat-icon>
-        </button>
+          Вход по коду
+        </e-button>
       </div>
     </div>
   </div>
