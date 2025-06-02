@@ -6,6 +6,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {LoginVariantsComponent} from "../login-variants/login-variants.component";
 import {debounceTime, take} from "rxjs";
 import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   standalone: true,
@@ -21,6 +22,7 @@ import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
 })
 export class LoginComponent {
   private readonly dialog = inject(MatDialog);
+  private readonly authService = inject(AuthService);
 
   public loginControl: FormControl<string> = new FormControl<string>('',
     { nonNullable: true, validators: Validators.required }
@@ -29,6 +31,7 @@ export class LoginComponent {
   public open(): void {
     if (!this.loginControl.invalid) {
       const dialogRef = this.dialog.open(LoginCodeComponent);
+      this.authService.address = this.loginControl.value;
 
       dialogRef.afterClosed()
         .pipe(take(1), debounceTime(500))

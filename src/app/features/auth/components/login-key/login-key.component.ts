@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject} from "@angular/core";
+import {ChangeDetectionStrategy, Component, DestroyRef, inject} from "@angular/core";
 import {MatDialog, MatDialogContent, MatDialogRef} from "@angular/material/dialog";
 import {CodeInputModule} from "angular-code-input";
 import {EInputComponent} from "../../../../shared/UI/e-input/e-input.component";
@@ -8,6 +8,7 @@ import {AsyncPipe} from "@angular/common";
 import {MatIconButton} from "@angular/material/button";
 import {LoginVariantsComponent} from "../login-variants/login-variants.component";
 import {MatIcon} from "@angular/material/icon";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
 @Component({
   standalone: true,
@@ -26,6 +27,7 @@ import {MatIcon} from "@angular/material/icon";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginKeyComponent {
+  private readonly destroyRef = inject(DestroyRef);
   private readonly dialogRef = inject(MatDialogRef<LoginKeyComponent>);
   private readonly dialog = inject(MatDialog);
 
@@ -35,7 +37,7 @@ export class LoginKeyComponent {
     this.isLoading$.next(true);
 
     timer(4000)
-      .pipe(take(1))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: () => location.href = 'https://gosuslugi.ru'
       })

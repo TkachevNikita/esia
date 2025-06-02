@@ -3,6 +3,7 @@ import {MatDialogContainer, MatDialogContent, MatDialogRef, MatDialogTitle} from
 import {CodeInputModule} from "angular-code-input";
 import {MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   standalone: true,
@@ -15,6 +16,7 @@ import {MatIcon} from "@angular/material/icon";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginCodeComponent {
+  protected readonly authService = inject(AuthService);
   private readonly dialogRef = inject(MatDialogRef<LoginCodeComponent>);
 
   public completed(): void {
