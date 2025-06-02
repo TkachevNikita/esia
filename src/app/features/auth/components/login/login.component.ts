@@ -34,7 +34,9 @@ export class LoginComponent {
         .pipe(take(1), debounceTime(500))
         .subscribe((value) => {
           if (value) {
-            this.dialog.open(LoginVariantsComponent)
+            this.dialog.open(LoginVariantsComponent, {
+              width: '600px'
+            })
           }
         });
     }
