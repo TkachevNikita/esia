@@ -6,6 +6,7 @@ import {EButtonComponent} from "../../../../shared/UI/e-button/e-button.componen
 import {LoginCallComponent} from "../login-call/login-call.component";
 import {LoginCodeComponent} from "../login-code/login-code.component";
 import {LoginPersonComponent} from "../login-person/login-person.component";
+import {LoginKeyComponent} from "../login-key/login-key.component";
 
 @Component({
   standalone: true,
@@ -24,7 +25,7 @@ export class LoginVariantsComponent {
   private readonly dialog = inject(MatDialog);
   private readonly dialogRef = inject(MatDialogRef<LoginCodeComponent>);
 
-  public selectVariant(variant: 'qr' | 'call' | 'nfc' | 'person'): void {
+  public selectVariant(variant: 'qr' | 'call' | 'nfc' | 'person' | 'code'): void {
     switch (variant) {
       case "call":
         this.dialogRef.close();
@@ -35,6 +36,12 @@ export class LoginVariantsComponent {
       case "person":
         this.dialogRef.close();
         this.dialog.open(LoginPersonComponent);
+        break;
+      case 'code':
+        this.dialogRef.close();
+        this.dialog.open(LoginKeyComponent, {
+          width: '600px'
+        });
         break;
     }
   }

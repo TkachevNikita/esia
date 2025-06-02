@@ -31,7 +31,6 @@ export class LoginCallComponent implements AfterViewInit {
   private readonly dialog = inject(MatDialog);
   private readonly destroyRef = inject(DestroyRef);
   private readonly snackBar = inject(MatSnackBar);
-  private readonly router = inject(Router);
 
   public showLoader$ = new BehaviorSubject<boolean>(false);
 

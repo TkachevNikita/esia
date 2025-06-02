@@ -11,8 +11,6 @@ import {MatIcon} from "@angular/material/icon";
   imports: [
     MatDialogContent,
     CodeInputModule,
-    MatIconButton,
-    MatIcon
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
