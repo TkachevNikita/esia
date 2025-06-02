@@ -7,6 +7,7 @@ import {LoginCallComponent} from "../login-call/login-call.component";
 import {LoginCodeComponent} from "../login-code/login-code.component";
 import {LoginPersonComponent} from "../login-person/login-person.component";
 import {LoginKeyComponent} from "../login-key/login-key.component";
+import {LoginPhysicComponent} from "../login-physic/login-physic.component";
 
 @Component({
   standalone: true,
@@ -40,6 +41,12 @@ export class LoginVariantsComponent {
       case 'code':
         this.dialogRef.close();
         this.dialog.open(LoginKeyComponent, {
+          width: '600px'
+        });
+        break;
+      case 'nfc':
+        this.dialogRef.close();
+        this.dialog.open(LoginPhysicComponent, {
           width: '600px'
         });
         break;
