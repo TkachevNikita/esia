@@ -12,6 +12,21 @@
     <p class="login-person__text">
       Вашему доверенному лицу был отправлен запрос на подтверждение входа
     </p>
-    <mat-spinner [diameter]="50"/>
+    @defer (on timer(6000ms)) {
+      <mat-spinner [diameter]="50"/>
+      <p style="text-align: center">
+        Ожидание ответа от доверенного лица слишком долгое, вы можете попробовать другие варианты авторизации
+      </p>
+      <div class="login-person__actions">
+        <e-button variant="outlined">
+          Звонок
+        </e-button>
+        <e-button variant="outlined">
+          QR-код
+        </e-button>
+      </div>
+    } @placeholder {
+      <mat-spinner [diameter]="50"/>
+    }
   </div>
 </mat-dialog-content>

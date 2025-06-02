@@ -5,6 +5,7 @@ import {MatIcon} from "@angular/material/icon";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {timer} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {EButtonComponent} from "../../../../shared/UI/e-button/e-button.component";
 
 @Component({
   standalone: true,
@@ -15,18 +16,9 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
     CodeInputModule,
     MatDialogContent,
     MatIcon,
-    MatProgressSpinner
+    MatProgressSpinner,
+    EButtonComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginPersonComponent implements AfterViewInit {
-  private readonly destroyRef = inject(DestroyRef);
-
-  public ngAfterViewInit(): void {
-    timer(5000)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe({
-        next: () => location.href = 'https://gosuslugi.ru'
-      })
-  }
-}
+export class LoginPersonComponent {}
